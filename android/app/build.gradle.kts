@@ -23,6 +23,7 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+        manifestPlaceholders["vibedropHost"] = (project.findProperty("VIBEDROP_HOST") as String?) ?: "yourapp.lk"
     }
 
     buildTypes {

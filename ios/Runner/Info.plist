@@ -7,7 +7,13 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Sharecode</string>
+	<string>VibeDrop</string>
+	<key>NSCameraUsageDescription</key>
+	<string>VibeDrop uses the camera to scan QR codes.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>VibeDrop lets you choose a profile photo or scan a QR from your gallery.</string>
+	<key>FlutterDeepLinkingEnabled</key>
+	<false/>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
