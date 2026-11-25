@@ -1,44 +1,42 @@
-# VibeDrop mobile app
+# VibeDrop — mobile app (UI build)
 
-Flutter app based on the product requirements and UI reference in [`docs/`](docs/). The app includes a dashboard, public profile preview, profile and link editor, privacy modes, QR Studio, PNG/story/wallpaper exports, camera/gallery scanner, scan history, and connections view. [`web-fallback/`](web-fallback/) serves public profiles when the app is not installed.
+Flutter UI for the VibeDrop digital-identity app, built from [`docs/`](docs/). This build is **UI-only**: there is no Supabase, auth provider, payment gateway, camera plugin or any network call. Every screen and action works against in-memory mock data (`lib/core/store.dart`), so the whole product flow can be explored and demoed before any backend is wired in.
 
-## Run locally
+## Run
 
 ```powershell
 flutter pub get
-flutter run
+flutter run                                   # any device
+flutter run -d chrome                         # web preview
+flutter run --dart-define=SKIP_ONBOARDING=true   # jump straight into the app
 ```
 
-Without cloud settings, the app starts with an editable **sample profile** stored on the device. The QR uses the default placeholder host `https://yourapp.lk`; set a real `PROFILE_HOST` before sharing or printing it. Local sample mode does not publish a public profile.
+Demo helpers: OTP code is `123456`, promo code `VIBE20`, PIN-locked profile `@dilan_p` (PIN `1234`), riddle-locked `@anjali.f` (answer `cargills`), ghost profile `@ghost_one`. Use **Scan → Enter code** to open them. After sign-in you land on Home; tap **Add details & generate QR** there to create your QR.
 
-## Connect Supabase
+## Theme
 
-1. Create a Supabase project and apply [`supabase/migrations/202611240001_vibedrop.sql`](supabase/migrations/202611240001_vibedrop.sql).
-2. Configure Email, Google, and Apple authentication providers as needed. Google and Apple OAuth need their native redirect configuration in Supabase and the platform projects.
-3. Deploy `web-fallback/` on your public domain. Copy its `.env.example` to `.env.local` and provide the project URL and **server-only service role key** in the deployment environment. Never include this key in Flutter or client bundles.
-4. Run the app with the project URL, **publishable/anon client key**, and your deployed public profile host:
+Dark-first with a violet → fuchsia brand gradient and warm orange highlights (inspired by the dark reference you attached), plus a full light theme. Toggle in **Profile → Settings → Dark mode**. All colours live in `lib/core/theme.dart`.
 
-```powershell
-flutter run --dart-define=SUPABASE_URL=https://YOUR_PROJECT.supabase.co --dart-define=SUPABASE_ANON_KEY=YOUR_PUBLIC_KEY --dart-define=PROFILE_HOST=https://YOUR_DOMAIN
-```
+## What's implemented
 
-Never pass a Supabase service role key or payment secret to Flutter. The mobile client writes only the signed-in owner's profile, links, QR style, and avatar under Row Level Security. Scan/click events, subscriptions, orders, generated media, and public profile reads require trusted server endpoints. The migration intentionally does not allow direct client writes to those tables.
+| Area | Screens / behaviour |
+| --- | --- |
+| Onboarding | Splash, 3-slide intro, Google / Apple / phone + OTP / email sign-in, sign-up with password strength + verify screen, forgot password, 3-step wizard (live username check, avatar picker, bio, first links), celebration screen |
+| Home | QR hero card, mode switcher, stats, Pro banner, quick actions, recent scans, notifications, burner-link banner |
+| QR Studio | Custom QR renderer (5 dot styles, 3 eye styles, 8 palettes incl. neon, centre avatar/logo, 5 CTA frames, EN/தமிழ்/සිංහල text), Pro gating |
+| Export | Lock-screen wallpaper (safe zone), Story card, hi-res image, transparent PNG, SVG/PDF (Pro), Wallet pass, simulated save |
+| Privacy | Social / Work / Custom modes, Ghost mode, PIN or secret-question lock, 24 h burner link, blocked users, "test as a scanner" |
+| Scanner | Simulated viewfinder, torch, gallery import, manual handle entry, auto-save to wallet |
+| Public profile | App/Web view toggle, links open-sheet, vCard save, Wave sheet, report / block, locked + ghost states |
+| Connections | Activity, Waves (accept / dismiss / pending / mutual), Scans, My Wallet, in-app chat with auto-replies |
+| Profile | Edit profile (gallery, drag-to-reorder links, vCard fields), link editor, cover picker |
+| Analytics | Totals free; Pro graphs, per-link clicks, cities, devices |
+| Monetisation | Pro paywall, checkout (promo code), merch store, order flow + tracking |
+| Settings | Theme, language, notification toggles, FAQ, log out, delete account |
 
-## Public profile host and app links
+## Backend
 
-```powershell
-cd web-fallback
-npm install
-npm run dev
-```
-
-The web server provides `/u/{handle}`, `/u/{handle}/vcard.vcf`, `/api/profile/{handle}`, `/api/waves`, tracked link redirects, and the two `.well-known` association files. It requires `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` server environment variables. For association files, also set `ANDROID_APP_ID`, `ANDROID_SHA256_FINGERPRINT`, `IOS_TEAM_ID`, and `IOS_BUNDLE_ID`. Use your production signing certificate fingerprint, not the debug certificate.
-
-Before a release, replace `com.example.sharecode` in Android and iOS with app identifiers you control. Set `VIBEDROP_HOST=your.domain` in `android/gradle.properties` for Android's verified link intent filter. Replace `applinks:yourapp.lk` in `ios/Runner/Runner.entitlements` with the same domain, enable Associated Domains for the iOS App ID, and set `PROFILE_HOST` to `https://your.domain` in the Flutter build. Deploy the web server and verify the association files before testing links on real devices.
-
-## Current integration boundaries
-
-This repository includes source for the web fallback and native link handling; it does **not** deploy them or configure your domain, signing fingerprints, OAuth provider credentials, or payment gateway. Wallet passes, push notifications, server media generation, Pro entitlement verification, SVG/PDF, detailed analytics, mutual chat, and merch checkout still need backend services. Do not print or distribute QR codes until the public profile host is deployed and tested on real devices.
+Nothing is integrated on purpose. The previous Supabase schema (`supabase/`) and Next.js fallback (`web-fallback/`) are untouched but unused by this build. When you're ready, replace the methods in `AppStore` with real calls — screens only talk to the store.
 
 ## Checks
 
@@ -46,3 +44,5 @@ This repository includes source for the web fallback and native link handling; i
 flutter analyze
 flutter test
 ```
+
+`test/screens_test.dart` renders every screen in light and dark mode and fails on any exception.
