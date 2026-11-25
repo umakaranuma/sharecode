@@ -602,14 +602,14 @@ class GradText extends StatelessWidget {
 
 // ───────────────────────── avatar & art ─────────────────────────
 const _avatarGrads = [
-  [Color(0xFF5A52DE), Color(0xFF8E80F2)],
-  [Color(0xFFC9805A), Color(0xFFC9719E)],
-  [Color(0xFF3F8FB0), Color(0xFF5E7FE0)],
-  [Color(0xFF3FA37E), Color(0xFF3F8FB0)],
-  [Color(0xFFC9A04E), Color(0xFFC96B5A)],
-  [Color(0xFF7D6AD8), Color(0xFF4F9CC0)],
-  [Color(0xFFC9719E), Color(0xFFC9A04E)],
-  [Color(0xFF4F76D8), Color(0xFF7D6AD8)],
+  [Color(0xFF4F5BFF), Color(0xFF8A4DFF)],
+  [Color(0xFFF29B4B), Color(0xFFEB6FA3)],
+  [Color(0xFF22B8E8), Color(0xFF4F5BFF)],
+  [Color(0xFF2FCB92), Color(0xFF22B8E8)],
+  [Color(0xFFF2C46B), Color(0xFFF0545F)],
+  [Color(0xFF8A4DFF), Color(0xFF22B8E8)],
+  [Color(0xFFEB6FA3), Color(0xFFF2C46B)],
+  [Color(0xFF4A9BFF), Color(0xFF8A4DFF)],
 ];
 List<Color> avatarGrad(int seed) =>
     _avatarGrads[seed.abs() % _avatarGrads.length];

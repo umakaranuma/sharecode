@@ -96,7 +96,20 @@ class _IntroPageState extends State<IntroPage> {
                 padding: const EdgeInsets.symmetric(horizontal: 28),
                 child: Column(
                   children: [
-                    Expanded(child: Center(child: slides[i].art)),
+                    Expanded(
+                      child: LayoutBuilder(
+                        builder: (_, box) => Center(
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: SizedBox(
+                              width: box.maxWidth,
+                              child: Center(child: slides[i].art),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 12),
                     Text(
                       slides[i].title,
                       textAlign: TextAlign.center,
@@ -227,104 +240,152 @@ class _QrArt extends StatelessWidget {
       (FontAwesomeIcons.spotify, const Color(0xFF1DB954), -1.0, .45),
       (FontAwesomeIcons.linkedinIn, const Color(0xFF0A66C2), .85, .8),
     ];
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        Container(
-          padding: const EdgeInsets.all(14),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(34),
-            boxShadow: [
-              BoxShadow(
-                color: VC.violet.withValues(alpha: .2),
-                blurRadius: 30,
-                offset: const Offset(0, 20),
-              ),
-            ],
+    return SizedBox(
+      width: 300,
+      height: 300,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Container(
+            padding: const EdgeInsets.all(14),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(34),
+              boxShadow: [
+                BoxShadow(
+                  color: VC.violet.withValues(alpha: .2),
+                  blurRadius: 30,
+                  offset: const Offset(0, 20),
+                ),
+              ],
+            ),
+            child: VibeQr(
+              data: 'https://vibedrop.lk/u/you',
+              cfg: cfg,
+              me: s.me,
+              size: 210,
+            ),
           ),
-          child: VibeQr(
-            data: 'https://vibedrop.lk/u/you',
-            cfg: cfg,
-            me: s.me,
-            size: 210,
-          ),
-        ),
-        for (final i in icons)
-          Align(
-            alignment: Alignment(i.$3, i.$4),
-            child: TweenAnimationBuilder<double>(
-              tween: Tween(begin: 0, end: 1),
-              duration: const Duration(milliseconds: 900),
-              curve: Curves.elasticOut,
-              builder: (_, v, _) => Transform.scale(
-                scale: v,
-                child: Container(
-                  width: 52,
-                  height: 52,
-                  decoration: BoxDecoration(
-                    color: i.$2,
-                    borderRadius: BorderRadius.circular(17),
-                    boxShadow: [
-                      BoxShadow(
-                        color: i.$2.withValues(alpha: .5),
-                        blurRadius: 18,
-                      ),
-                    ],
-                  ),
-                  child: Center(
-                    child: anyIcon(i.$1, color: Colors.white, size: 22),
+          for (final i in icons)
+            Align(
+              alignment: Alignment(i.$3, i.$4),
+              child: TweenAnimationBuilder<double>(
+                tween: Tween(begin: 0, end: 1),
+                duration: const Duration(milliseconds: 900),
+                curve: Curves.elasticOut,
+                builder: (_, v, _) => Transform.scale(
+                  scale: v,
+                  child: Container(
+                    width: 52,
+                    height: 52,
+                    decoration: BoxDecoration(
+                      color: i.$2,
+                      borderRadius: BorderRadius.circular(17),
+                      boxShadow: [
+                        BoxShadow(
+                          color: i.$2.withValues(alpha: .5),
+                          blurRadius: 18,
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: anyIcon(i.$1, color: Colors.white, size: 22),
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-      ],
+        ],
+      ),
     );
   }
 }
 
-class _PrivacyArt extends StatelessWidget {
+class _PrivacyArt extends StatefulWidget {
   const _PrivacyArt();
+  @override
+  State<_PrivacyArt> createState() => _PrivacyArtState();
+}
+
+class _PrivacyArtState extends State<_PrivacyArt> {
+  int sel = 0;
+  static const items = [
+    (
+      'Chill / Social',
+      'Instagram, Snapchat, Spotify',
+      Icons.celebration_rounded,
+      VC.pink,
+    ),
+    ('Work / Campus', 'Phone, email, LinkedIn', Icons.work_rounded, VC.blue),
+    ('Custom', 'Pick links one by one', Icons.tune_rounded, VC.gold),
+    (
+      'Ghost Mode',
+      'Pause your profile',
+      Icons.visibility_off_rounded,
+      VC.violet,
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     final c = context.c;
-    Widget mode(String t, IconData i, Color col, bool on) => Container(
-      margin: const EdgeInsets.symmetric(vertical: 7),
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: c.card,
-        borderRadius: BorderRadius.circular(22),
-        border: Border.all(color: on ? col : c.border, width: on ? 2 : 1),
-        boxShadow: on
-            ? [BoxShadow(color: col.withValues(alpha: .3), blurRadius: 24)]
-            : null,
-      ),
-      child: Row(
-        children: [
-          RoundIconBg(i, col),
-          const SizedBox(width: 14),
-          Expanded(
-            child: Text(
-              t,
-              style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
-            ),
-          ),
-          Icon(
-            on
-                ? Icons.radio_button_checked_rounded
-                : Icons.radio_button_off_rounded,
-            color: on ? col : c.sub,
-          ),
-        ],
-      ),
-    );
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        mode('Chill / Social', Icons.celebration_rounded, VC.pink, true),
-        mode('Work / Campus', Icons.work_rounded, VC.blue, false),
-        mode('Ghost Mode', Icons.visibility_off_rounded, VC.violet, false),
+        for (var i = 0; i < items.length; i++)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: Tap(
+              onTap: () => setState(() => sel = i),
+              scale: .98,
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 220),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 14,
+                  vertical: 12,
+                ),
+                decoration: BoxDecoration(
+                  color: sel == i ? items[i].$4.withValues(alpha: .10) : c.card,
+                  borderRadius: BorderRadius.circular(18),
+                  border: Border.all(
+                    color: sel == i ? items[i].$4 : c.border,
+                    width: sel == i ? 1.5 : 1,
+                  ),
+                ),
+                child: Row(
+                  children: [
+                    RoundIconBg(items[i].$3, items[i].$4, size: 40, radius: 12),
+                    const SizedBox(width: 14),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            items[i].$1,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 15,
+                            ),
+                          ),
+                          const SizedBox(height: 2),
+                          Text(
+                            items[i].$2,
+                            style: TextStyle(color: c.sub, fontSize: 12.5),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Icon(
+                      sel == i
+                          ? Icons.check_circle_rounded
+                          : Icons.radio_button_unchecked_rounded,
+                      color: sel == i ? items[i].$4 : c.sub,
+                      size: 22,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
       ],
     );
   }
@@ -351,34 +412,38 @@ class _WaveArtState extends State<_WaveArt>
   @override
   Widget build(BuildContext context) => AnimatedBuilder(
     animation: a,
-    builder: (_, _) => Stack(
-      alignment: Alignment.center,
-      children: [
-        for (var i = 0; i < 3; i++)
-          Container(
-            width: 120.0 + i * 70 + a.value * 14,
-            height: 120.0 + i * 70 + a.value * 14,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: VC.violet.withValues(alpha: .35 - i * .1),
-                width: 2,
+    builder: (_, _) => SizedBox(
+      width: 300,
+      height: 300,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          for (var i = 0; i < 3; i++)
+            Container(
+              width: 120.0 + i * 70 + a.value * 14,
+              height: 120.0 + i * 70 + a.value * 14,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: VC.violet.withValues(alpha: .35 - i * .1),
+                  width: 2,
+                ),
               ),
             ),
+          Transform.rotate(
+            angle: sin(a.value * pi * 2) * .25,
+            child: const Text('👋', style: TextStyle(fontSize: 84)),
           ),
-        Transform.rotate(
-          angle: sin(a.value * pi * 2) * .25,
-          child: const Text('👋', style: TextStyle(fontSize: 84)),
-        ),
-        const Align(
-          alignment: Alignment(-.9, -.6),
-          child: Avatar(name: 'Nisha Ravi', seed: 3, size: 56, ring: true),
-        ),
-        const Align(
-          alignment: Alignment(.95, .55),
-          child: Avatar(name: 'Arjun Dev', seed: 11, size: 56, ring: true),
-        ),
-      ],
+          const Align(
+            alignment: Alignment(-.9, -.6),
+            child: Avatar(name: 'Nisha Ravi', seed: 3, size: 56, ring: true),
+          ),
+          const Align(
+            alignment: Alignment(.95, .55),
+            child: Avatar(name: 'Arjun Dev', seed: 11, size: 56, ring: true),
+          ),
+        ],
+      ),
     ),
   );
 }

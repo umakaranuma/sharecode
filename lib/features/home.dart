@@ -137,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.all(18),
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
-                      colors: [Color(0xFF1E1D2C), Color(0xFF131319)],
+                      colors: [Color(0xFF17224F), Color(0xFF0B1230)],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
@@ -174,15 +174,19 @@ class _HomePageState extends State<HomePage> {
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Avatar(
-                                  name: me.name,
-                                  seed: me.avatarSeed,
-                                  emoji: me.emoji,
-                                  size: 58,
-                                  ring: false,
+                                Text(
+                                  me.name,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    color: Colors.white.withValues(alpha: .7),
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
-                                const SizedBox(height: 12),
+                                const SizedBox(height: 4),
                                 Text(
                                   '@${me.username}',
                                   maxLines: 1,
