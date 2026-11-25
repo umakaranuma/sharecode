@@ -212,7 +212,7 @@ class GradBtn extends StatelessWidget {
     this.onTap,
     this.icon,
     this.gradient = VC.brand,
-    this.height = 54,
+    this.height = 48,
     this.loading = false,
     this.expand = true,
     this.textColor = Colors.white,
@@ -272,7 +272,7 @@ class GradBtn extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       color: textColor,
-                      fontSize: 15.5,
+                      fontSize: 14.5,
                       fontWeight: FontWeight.w600,
                       letterSpacing: .2,
                     ),
@@ -293,7 +293,7 @@ class SoftBtn extends StatelessWidget {
     super.key,
     this.onTap,
     this.icon,
-    this.height = 54,
+    this.height = 48,
     this.expand = true,
     this.color,
   });
@@ -438,7 +438,7 @@ class SectionTitle extends StatelessWidget {
               Text(
                 text,
                 style: const TextStyle(
-                  fontSize: 18,
+                  fontSize: 16,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -602,14 +602,14 @@ class GradText extends StatelessWidget {
 
 // ───────────────────────── avatar & art ─────────────────────────
 const _avatarGrads = [
-  [Color(0xFF4F5BFF), Color(0xFF8A4DFF)],
-  [Color(0xFFF29B4B), Color(0xFFEB6FA3)],
-  [Color(0xFF22B8E8), Color(0xFF4F5BFF)],
-  [Color(0xFF2FCB92), Color(0xFF22B8E8)],
+  [Color(0xFFE8590C), Color(0xFFFF8A3D)],
+  [Color(0xFFF29B4B), Color(0xFFE5557A)],
+  [Color(0xFFF5B642), Color(0xFFE8590C)],
+  [Color(0xFF2FCB92), Color(0xFFF5B642)],
   [Color(0xFFF2C46B), Color(0xFFF0545F)],
-  [Color(0xFF8A4DFF), Color(0xFF22B8E8)],
-  [Color(0xFFEB6FA3), Color(0xFFF2C46B)],
-  [Color(0xFF4A9BFF), Color(0xFF8A4DFF)],
+  [Color(0xFFFF8A3D), Color(0xFFF5B642)],
+  [Color(0xFFE5557A), Color(0xFFF2C46B)],
+  [Color(0xFF4A9BFF), Color(0xFFFF8A3D)],
 ];
 List<Color> avatarGrad(int seed) =>
     _avatarGrads[seed.abs() % _avatarGrads.length];

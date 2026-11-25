@@ -37,7 +37,7 @@ class _ConnectionsPageState extends State<ConnectionsPage> {
                 child: Text(
                   'Connections',
                   style: TextStyle(
-                    fontSize: 30,
+                    fontSize: 26,
                     fontWeight: FontWeight.w700,
                     letterSpacing: -.6,
                   ),

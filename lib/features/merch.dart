@@ -666,7 +666,7 @@ class OrderDoneInfo extends StatelessWidget {
                 const SizedBox(height: 26),
                 const Text(
                   'Order placed!',
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
+                  style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700),
                 ),
                 const SizedBox(height: 8),
                 Text(

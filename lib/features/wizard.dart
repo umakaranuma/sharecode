@@ -211,7 +211,7 @@ class _WizardPageState extends State<WizardPage> {
                       Text(
                         titles[step],
                         style: const TextStyle(
-                          fontSize: 30,
+                          fontSize: 26,
                           fontWeight: FontWeight.w700,
                           letterSpacing: -.6,
                         ),
@@ -259,7 +259,7 @@ class _WizardPageState extends State<WizardPage> {
           onChanged: onUser,
           autocorrect: false,
           inputFormatters: [LengthLimitingTextInputFormatter(24)],
-          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
           decoration: InputDecoration(
             hintText: 'username',
             prefixIcon: Padding(
@@ -269,7 +269,7 @@ class _WizardPageState extends State<WizardPage> {
                 child: Text(
                   '@',
                   style: TextStyle(
-                    fontSize: 22,
+                    fontSize: 18,
                     fontWeight: FontWeight.w700,
                     color: c.accent,
                   ),
@@ -427,7 +427,7 @@ class _WizardPageState extends State<WizardPage> {
           maxLines: 2,
           onChanged: (_) => setState(() {}),
           decoration: const InputDecoration(
-            hintText: 'Designer • Coffee lover • தமிழ் / English / සිංහල',
+            hintText: 'Say something about you',
           ),
         ),
         const FormLabel('City / campus badge'),
@@ -460,35 +460,60 @@ class _WizardPageState extends State<WizardPage> {
       children: [
         for (final e in picked.entries)
           Padding(
-            padding: const EdgeInsets.only(bottom: 14),
+            padding: const EdgeInsets.only(bottom: 10),
             child: Box(
-              pad: 14,
+              pad: 10,
+              radius: 16,
               child: Row(
                 children: [
-                  PlatformBadge(platformOf(e.key), size: 48),
-                  const SizedBox(width: 14),
+                  PlatformBadge(platformOf(e.key), size: 38),
+                  const SizedBox(width: 12),
                   Expanded(
-                    child: TextField(
-                      controller: e.value,
-                      onChanged: (_) => setState(() {}),
-                      keyboardType: e.key == 'whatsapp'
-                          ? TextInputType.phone
-                          : TextInputType.text,
-                      decoration: InputDecoration(
-                        labelText: platformOf(e.key).name,
-                        hintText: platformOf(e.key).hint,
-                        prefixText: platformOf(e.key).prefix == '@'
-                            ? '@'
-                            : platformOf(e.key).prefix,
-                        fillColor: Colors.transparent,
-                        border: InputBorder.none,
-                        enabledBorder: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                      ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          platformOf(e.key).name,
+                          style: TextStyle(
+                            color: c.sub,
+                            fontSize: 11.5,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        TextField(
+                          controller: e.value,
+                          onChanged: (_) => setState(() {}),
+                          style: const TextStyle(fontSize: 14.5),
+                          keyboardType: e.key == 'whatsapp'
+                              ? TextInputType.phone
+                              : TextInputType.text,
+                          decoration: InputDecoration(
+                            hintText:
+                                '${platformOf(e.key).prefix}${platformOf(e.key).hint}',
+                            isDense: true,
+                            contentPadding: const EdgeInsets.symmetric(
+                              vertical: 4,
+                            ),
+                            filled: false,
+                            border: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   if (e.value.text.trim().isNotEmpty)
-                    const Icon(Icons.check_circle_rounded, color: VC.green),
+                    const Icon(
+                      Icons.check_circle_rounded,
+                      color: VC.green,
+                      size: 20,
+                    )
+                  else if (picked.length > 2)
+                    Tap(
+                      onTap: () => setState(() => picked.remove(e.key)),
+                      child: Icon(Icons.close_rounded, color: c.sub, size: 20),
+                    ),
                 ],
               ),
             ),

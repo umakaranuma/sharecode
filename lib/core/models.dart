@@ -274,7 +274,7 @@ class QrPalette {
 }
 
 const qrPalettes = <QrPalette>[
-  QrPalette('Indigo', Color(0xFF3B3FD8), Color(0xFF8A4DFF)),
+  QrPalette('Indigo', Color(0xFFB93C0A), Color(0xFFFF8A3D)),
   QrPalette('Ocean', Color(0xFF1D4ED8), Color(0xFF06B6D4)),
   QrPalette('Rose', Color(0xFFBE185D), Color(0xFFF97316)),
   QrPalette('Sunset', Color(0xFFEA580C), Color(0xFFDB2777)),
@@ -401,7 +401,7 @@ const merch = <MerchProduct>[
     790,
     Icons.smartphone_rounded,
     'Bestseller',
-    [Color(0xFF6B5CFF), Color(0xFFEC4899)],
+    [Color(0xFFF2711C), Color(0xFFEC4899)],
   ),
   MerchProduct(
     'keychain',

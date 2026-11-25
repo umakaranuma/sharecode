@@ -114,7 +114,7 @@ class _IntroPageState extends State<IntroPage> {
                       slides[i].title,
                       textAlign: TextAlign.center,
                       style: const TextStyle(
-                        fontSize: 34,
+                        fontSize: 24,
                         height: 1.1,
                         fontWeight: FontWeight.w700,
                         letterSpacing: -.8,
@@ -207,7 +207,7 @@ class _Splash extends StatelessWidget {
               const Text(
                 'VibeDrop',
                 style: TextStyle(
-                  fontSize: 38,
+                  fontSize: 32,
                   fontWeight: FontWeight.w700,
                   letterSpacing: -1,
                 ),

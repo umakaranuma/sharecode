@@ -15,51 +15,51 @@ class VC extends ThemeExtension<VC> {
   final Color bg, card, card2, border, text, sub;
   final bool dark;
 
-  static const violet = Color(0xFF6B5CFF);
-  static const fuchsia = Color(0xFFA06BFF);
-  static const pink = Color(0xFFEB6FA3);
+  static const violet = Color(0xFFF2711C);
+  static const fuchsia = Color(0xFFFF9A4D);
+  static const pink = Color(0xFFE5557A);
   static const orange = Color(0xFFF29B4B);
   static const green = Color(0xFF2FCB92);
   static const red = Color(0xFFF0545F);
-  static const blue = Color(0xFF4A9BFF);
+  static const blue = Color(0xFF5AA0F5);
   static const gold = Color(0xFFF2C46B);
 
   static const brand = LinearGradient(
-    colors: [Color(0xFF4F5BFF), Color(0xFF8A4DFF)],
+    colors: [Color(0xFFE8590C), Color(0xFFFF8A3D)],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
   static const sunset = LinearGradient(
-    colors: [Color(0xFFF29B4B), Color(0xFFEB6FA3), Color(0xFF8A4DFF)],
+    colors: [Color(0xFFF29B4B), Color(0xFFE5557A), Color(0xFFFF8A3D)],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
   static const proGrad = LinearGradient(
-    colors: [Color(0xFFF7D27A), Color(0xFFE79A45)],
+    colors: [Color(0xFFF6D98C), Color(0xFFD9A441)],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
 
   static const darkC = VC(
-    bg: Color(0xFF070A14),
-    card: Color(0xFF0E1426),
-    card2: Color(0xFF151D36),
+    bg: Color(0xFF0C0A09),
+    card: Color(0xFF161311),
+    card2: Color(0xFF1F1B18),
     border: Color(0x1AFFFFFF),
-    text: Color(0xFFF3F5FF),
-    sub: Color(0xFF8C94B3),
+    text: Color(0xFFF8F3EE),
+    sub: Color(0xFF9B9189),
     dark: true,
   );
   static const lightC = VC(
-    bg: Color(0xFFF3F5FB),
+    bg: Color(0xFFFAF7F2),
     card: Color(0xFFFFFFFF),
-    card2: Color(0xFFEBEEF8),
-    border: Color(0xFFE1E5F2),
-    text: Color(0xFF0F1530),
-    sub: Color(0xFF65709A),
+    card2: Color(0xFFF3EDE6),
+    border: Color(0xFFEAE2D9),
+    text: Color(0xFF1C1612),
+    sub: Color(0xFF7C7168),
     dark: false,
   );
 
-  Color get accent => dark ? const Color(0xFF9AA4FF) : violet;
+  Color get accent => dark ? const Color(0xFFFFA566) : violet;
 
   @override
   VC copyWith() => this;
@@ -88,7 +88,12 @@ ThemeData buildTheme(bool dark) {
   );
   return base.copyWith(
     extensions: [c],
-    textTheme: base.textTheme.apply(bodyColor: c.text, displayColor: c.text),
+    textTheme: base.textTheme
+        .apply(bodyColor: c.text, displayColor: c.text)
+        .copyWith(
+          bodyLarge: TextStyle(fontSize: 14.5, color: c.text),
+          titleMedium: TextStyle(fontSize: 14.5, color: c.text),
+        ),
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.transparent,
       surfaceTintColor: Colors.transparent,
@@ -106,33 +111,35 @@ ThemeData buildTheme(bool dark) {
       trackColor: WidgetStateProperty.resolveWith(
         (s) => s.contains(WidgetState.selected)
             ? VC.violet
-            : (dark ? const Color(0xFF2A3350) : const Color(0xFFCBD1E6)),
+            : (dark ? const Color(0xFF3A332E) : const Color(0xFFD6CCC2)),
       ),
       trackOutlineColor: const WidgetStatePropertyAll(Colors.transparent),
     ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: c.card,
-      hintStyle: TextStyle(color: c.sub.withValues(alpha: .7)),
-      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+      hintStyle: TextStyle(color: c.sub.withValues(alpha: .7), fontSize: 14),
+      labelStyle: TextStyle(color: c.sub, fontSize: 14),
+      isDense: true,
+      contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(14),
         borderSide: BorderSide(color: c.border),
       ),
       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(14),
         borderSide: BorderSide(color: c.border),
       ),
       focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(14),
         borderSide: const BorderSide(color: VC.violet, width: 1.6),
       ),
       errorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(14),
         borderSide: const BorderSide(color: VC.red),
       ),
       focusedErrorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(14),
         borderSide: const BorderSide(color: VC.red, width: 1.6),
       ),
     ),

@@ -682,7 +682,7 @@ class StoryPreview extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(28),
             gradient: const LinearGradient(
-              colors: [Color(0xFF3B0764), Color(0xFF6B5CFF), Color(0xFFEC4899)],
+              colors: [Color(0xFF3B0764), Color(0xFFF2711C), Color(0xFFEC4899)],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),

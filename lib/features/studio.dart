@@ -42,7 +42,7 @@ class _StudioPageState extends State<StudioPage> {
                 child: Text(
                   'QR Studio',
                   style: TextStyle(
-                    fontSize: 30,
+                    fontSize: 26,
                     fontWeight: FontWeight.w700,
                     letterSpacing: -.6,
                   ),

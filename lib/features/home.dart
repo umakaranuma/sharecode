@@ -95,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                       Text(
                         'Hey $first! 👋',
                         style: const TextStyle(
-                          fontSize: 28,
+                          fontSize: 24,
                           fontWeight: FontWeight.w700,
                           letterSpacing: -.6,
                         ),
@@ -137,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.all(18),
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
-                      colors: [Color(0xFF17224F), Color(0xFF0B1230)],
+                      colors: [Color(0xFF2B1D14), Color(0xFF15100D)],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
@@ -634,7 +634,7 @@ class _Stat extends StatelessWidget {
           Text(
             value,
             style: const TextStyle(
-              fontSize: 28,
+              fontSize: 24,
               fontWeight: FontWeight.w700,
               letterSpacing: -.5,
             ),

@@ -143,7 +143,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                         Text(
                           '$total',
                           style: const TextStyle(
-                            fontSize: 30,
+                            fontSize: 26,
                             fontWeight: FontWeight.w700,
                           ),
                         ),

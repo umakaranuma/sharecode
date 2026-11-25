@@ -399,7 +399,7 @@ class _ProPageState extends State<ProPage> {
               const SizedBox(height: 24),
               const Text(
                 'You\'re Pro! 🎉',
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
+                style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700),
               ),
               const SizedBox(height: 8),
               Text(

@@ -104,7 +104,7 @@ class Shell extends StatelessWidget {
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: c.dark ? const Color(0xFF0A0F1E) : const Color(0xFFFFFFFF),
+          color: c.dark ? const Color(0xFF110E0C) : const Color(0xFFFFFFFF),
           border: Border(top: BorderSide(color: c.border)),
           boxShadow: [
             BoxShadow(

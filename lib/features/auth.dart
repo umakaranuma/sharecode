@@ -93,7 +93,7 @@ class AuthPage extends StatelessWidget {
                   child: RichText(
                     text: TextSpan(
                       style: TextStyle(
-                        fontSize: 38,
+                        fontSize: 32,
                         height: 1.08,
                         fontWeight: FontWeight.w700,
                         letterSpacing: -1,
@@ -269,7 +269,7 @@ class _EmailAuthPageState extends State<EmailAuthPage> {
                   Text(
                     signup ? 'Let\'s get you set up' : 'Log in to VibeDrop',
                     style: const TextStyle(
-                      fontSize: 28,
+                      fontSize: 24,
                       fontWeight: FontWeight.w700,
                       letterSpacing: -.5,
                     ),
@@ -427,7 +427,7 @@ class _EmailAuthPageState extends State<EmailAuthPage> {
                 const SizedBox(height: 28),
                 const Text(
                   'Check your inbox',
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w700),
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
                 ),
                 const SizedBox(height: 10),
                 Text(
@@ -520,7 +520,7 @@ class _ForgotPageState extends State<ForgotPage> {
                       const Text(
                         'Forgot your password?',
                         style: TextStyle(
-                          fontSize: 28,
+                          fontSize: 24,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
@@ -593,7 +593,7 @@ class _PhoneAuthPageState extends State<PhoneAuthPage> {
               children: [
                 const Text(
                   'What\'s your number?',
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w700),
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
                 ),
                 const SizedBox(height: 8),
                 Text(
