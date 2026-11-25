@@ -67,7 +67,6 @@ class _HomePageState extends State<HomePage> {
     final s = context.store;
     final c = context.c;
     final me = s.me;
-    final pal = qrPalettes[s.qr.paletteIndex];
     final first = me.name.split(' ').first;
     return SafeArea(
       bottom: false,
@@ -97,7 +96,7 @@ class _HomePageState extends State<HomePage> {
                         'Hey $first! 👋',
                         style: const TextStyle(
                           fontSize: 28,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                           letterSpacing: -.6,
                         ),
                       ),
@@ -137,39 +136,25 @@ class _HomePageState extends State<HomePage> {
                 child: Container(
                   padding: const EdgeInsets.all(18),
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        pal.neon ? const Color(0xFF1B1448) : pal.a,
-                        pal.neon
-                            ? const Color(0xFF3B1A6E)
-                            : Color.lerp(pal.b, pal.a, .25)!,
-                      ],
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFF1E1D2C), Color(0xFF131319)],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
-                    borderRadius: BorderRadius.circular(30),
+                    border: Border.all(
+                      color: Colors.white.withValues(alpha: .08),
+                    ),
+                    borderRadius: BorderRadius.circular(26),
                     boxShadow: [
                       BoxShadow(
-                        color: pal.a.withValues(alpha: .45),
-                        blurRadius: 34,
-                        offset: const Offset(0, 16),
+                        color: Colors.black.withValues(alpha: .18),
+                        blurRadius: 24,
+                        offset: const Offset(0, 10),
                       ),
                     ],
                   ),
                   child: Stack(
                     children: [
-                      Positioned(
-                        right: -30,
-                        top: -30,
-                        child: Container(
-                          width: 130,
-                          height: 130,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white.withValues(alpha: .08),
-                          ),
-                        ),
-                      ),
                       Row(
                         children: [
                           Container(
@@ -205,7 +190,7 @@ class _HomePageState extends State<HomePage> {
                                   style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 19,
-                                    fontWeight: FontWeight.w900,
+                                    fontWeight: FontWeight.w700,
                                   ),
                                 ),
                                 const SizedBox(height: 6),
@@ -311,7 +296,7 @@ class _HomePageState extends State<HomePage> {
                         Text(
                           s.ghost ? 'Ghost Mode' : modeName(s.mode),
                           style: const TextStyle(
-                            fontWeight: FontWeight.w800,
+                            fontWeight: FontWeight.w600,
                             fontSize: 16,
                           ),
                         ),
@@ -372,7 +357,7 @@ class _HomePageState extends State<HomePage> {
                         VC.violet.withValues(alpha: .22),
                       ],
                     ),
-                    border: Border.all(color: VC.orange.withValues(alpha: .4)),
+                    border: Border.all(color: VC.orange.withValues(alpha: .2)),
                   ),
                   child: Row(
                     children: [
@@ -396,7 +381,7 @@ class _HomePageState extends State<HomePage> {
                             const Text(
                               'Upgrade to Pro',
                               style: TextStyle(
-                                fontWeight: FontWeight.w900,
+                                fontWeight: FontWeight.w700,
                                 fontSize: 16,
                               ),
                             ),
@@ -504,7 +489,7 @@ class ModePickerSheet extends StatelessWidget {
         children: [
           const Text(
             'Switch mode',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900),
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
           ),
           Text(
             'Changes instantly. Your QR stays the same.',
@@ -540,7 +525,7 @@ class ModePickerSheet extends StatelessWidget {
                           Text(
                             modeName(m),
                             style: const TextStyle(
-                              fontWeight: FontWeight.w800,
+                              fontWeight: FontWeight.w600,
                               fontSize: 16,
                             ),
                           ),
@@ -572,7 +557,7 @@ class ModePickerSheet extends StatelessWidget {
                 const Expanded(
                   child: Text(
                     'Ghost Mode (pause)',
-                    style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16),
+                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
                   ),
                 ),
                 if (s.ghost)
@@ -596,7 +581,7 @@ class _TempBanner extends StatelessWidget {
       decoration: BoxDecoration(
         color: VC.orange.withValues(alpha: .14),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: VC.orange.withValues(alpha: .4)),
+        border: Border.all(color: VC.orange.withValues(alpha: .2)),
       ),
       child: Row(
         children: [
@@ -605,14 +590,14 @@ class _TempBanner extends StatelessWidget {
           Expanded(
             child: Text(
               'Burner link active • ${left.inHours}h ${left.inMinutes % 60}m left',
-              style: const TextStyle(fontWeight: FontWeight.w800),
+              style: const TextStyle(fontWeight: FontWeight.w600),
             ),
           ),
           TextButton(
             onPressed: s.endTempLink,
             child: const Text(
               'End',
-              style: TextStyle(color: VC.orange, fontWeight: FontWeight.w900),
+              style: TextStyle(color: VC.orange, fontWeight: FontWeight.w700),
             ),
           ),
         ],
@@ -646,7 +631,7 @@ class _Stat extends StatelessWidget {
             value,
             style: const TextStyle(
               fontSize: 28,
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.w700,
               letterSpacing: -.5,
             ),
           ),
@@ -660,7 +645,7 @@ class _Stat extends StatelessWidget {
                 delta,
                 style: const TextStyle(
                   color: VC.green,
-                  fontWeight: FontWeight.w800,
+                  fontWeight: FontWeight.w600,
                   fontSize: 13,
                 ),
               ),
@@ -699,7 +684,7 @@ class _Quick extends StatelessWidget {
             Text(
               label,
               style: const TextStyle(
-                fontWeight: FontWeight.w800,
+                fontWeight: FontWeight.w600,
                 fontSize: 12.5,
                 height: 1.2,
               ),
@@ -737,7 +722,7 @@ class _ScanRow extends StatelessWidget {
                 Text(
                   e.who,
                   style: const TextStyle(
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w600,
                     fontSize: 15,
                   ),
                 ),
@@ -769,7 +754,7 @@ class _SetupCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(30),
         boxShadow: [
           BoxShadow(
-            color: VC.violet.withValues(alpha: .4),
+            color: VC.violet.withValues(alpha: .2),
             blurRadius: 30,
             offset: const Offset(0, 14),
           ),
@@ -797,7 +782,7 @@ class _SetupCard extends StatelessWidget {
             style: TextStyle(
               color: Colors.white,
               fontSize: 22,
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.w700,
             ),
           ),
           const SizedBox(height: 6),
@@ -831,7 +816,7 @@ class _SetupCard extends StatelessWidget {
                     'Add details & generate QR',
                     style: TextStyle(
                       color: VC.violet,
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w700,
                       fontSize: 15.5,
                     ),
                   ),

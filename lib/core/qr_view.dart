@@ -282,7 +282,7 @@ class VibeQr extends StatelessWidget {
                     me.name.isEmpty ? 'V' : me.name[0].toUpperCase(),
                     style: TextStyle(
                       color: Colors.white,
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w700,
                       fontSize: logo * .5,
                     ),
                   ),
@@ -363,7 +363,7 @@ class QrCard extends StatelessWidget {
                 label,
                 style: TextStyle(
                   color: txtCol,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                   fontSize: size * .075,
                   letterSpacing: .4,
                 ),
@@ -389,7 +389,7 @@ class QrCard extends StatelessWidget {
                 label,
                 style: TextStyle(
                   color: txtCol,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                   fontSize: size * .06,
                 ),
               ),
@@ -434,7 +434,7 @@ class QrCard extends StatelessWidget {
                     ' $label',
                     style: TextStyle(
                       color: pal.a,
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w700,
                       fontSize: size * .062,
                     ),
                   ),
@@ -472,7 +472,7 @@ class QrCard extends StatelessWidget {
                 label.toUpperCase(),
                 style: TextStyle(
                   color: pal.b,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                   fontSize: size * .055,
                   letterSpacing: 1.6,
                 ),
@@ -542,7 +542,7 @@ class QrCard extends StatelessWidget {
                       handle,
                       style: TextStyle(
                         color: const Color(0xFF14112E),
-                        fontWeight: FontWeight.w900,
+                        fontWeight: FontWeight.w700,
                         fontSize: size * .062,
                       ),
                     ),

@@ -80,7 +80,7 @@ Future<bool> confirm(
   final r = await showDialog<bool>(
     context: context,
     builder: (ctx) => AlertDialog(
-      title: Text(title, style: const TextStyle(fontWeight: FontWeight.w800)),
+      title: Text(title, style: const TextStyle(fontWeight: FontWeight.w600)),
       content: Text(body, style: TextStyle(color: ctx.c.sub, height: 1.4)),
       actions: [
         TextButton(
@@ -193,9 +193,9 @@ class Box extends StatelessWidget {
             ? null
             : [
                 BoxShadow(
-                  color: const Color(0xFF7C3AED).withValues(alpha: .06),
-                  blurRadius: 18,
-                  offset: const Offset(0, 6),
+                  color: Colors.black.withValues(alpha: .04),
+                  blurRadius: 14,
+                  offset: const Offset(0, 4),
                 ),
               ],
       ),
@@ -241,9 +241,9 @@ class GradBtn extends StatelessWidget {
                 ? null
                 : [
                     BoxShadow(
-                      color: VC.violet.withValues(alpha: .38),
-                      blurRadius: 20,
-                      offset: const Offset(0, 8),
+                      color: VC.violet.withValues(alpha: .2),
+                      blurRadius: 14,
+                      offset: const Offset(0, 5),
                     ),
                   ],
           ),
@@ -265,7 +265,19 @@ class GradBtn extends StatelessWidget {
                   Icon(icon, color: textColor, size: 20),
                   const SizedBox(width: 8),
                 ],
-                Flexible(child: Text(label, maxLines: 1, overflow: TextOverflow.ellipsis, style: TextStyle(color: textColor, fontSize: 15.5, fontWeight: FontWeight.w800, letterSpacing: .2))),
+                Flexible(
+                  child: Text(
+                    label,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      color: textColor,
+                      fontSize: 15.5,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: .2,
+                    ),
+                  ),
+                ),
               ],
             ],
           ),
@@ -313,7 +325,18 @@ class SoftBtn extends StatelessWidget {
               Icon(icon, color: fg, size: 19),
               const SizedBox(width: 8),
             ],
-            Flexible(child: Text(label, maxLines: 1, overflow: TextOverflow.ellipsis, style: TextStyle(color: fg, fontWeight: FontWeight.w800, fontSize: 15))),
+            Flexible(
+              child: Text(
+                label,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  color: fg,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 15,
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -353,7 +376,7 @@ class Pill extends StatelessWidget {
             text,
             style: TextStyle(
               fontSize: 11.5,
-              fontWeight: FontWeight.w800,
+              fontWeight: FontWeight.w600,
               color: filled ? Colors.white : col,
             ),
           ),
@@ -381,7 +404,7 @@ class ProBadge extends StatelessWidget {
           'PRO',
           style: TextStyle(
             fontSize: 10,
-            fontWeight: FontWeight.w900,
+            fontWeight: FontWeight.w700,
             color: Colors.white,
             letterSpacing: .6,
           ),
@@ -416,7 +439,7 @@ class SectionTitle extends StatelessWidget {
                 text,
                 style: const TextStyle(
                   fontSize: 18,
-                  fontWeight: FontWeight.w800,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
               if (sub != null)
@@ -538,7 +561,13 @@ class PlatformBadge extends StatelessWidget {
     decoration: BoxDecoration(
       gradient: p.id == 'instagram'
           ? const LinearGradient(
-              colors: [Color(0xFFFEDA75), Color(0xFFFA7E1E), Color(0xFFD62976), Color(0xFF962FBF), Color(0xFF4F5BD5)],
+              colors: [
+                Color(0xFFFEDA75),
+                Color(0xFFFA7E1E),
+                Color(0xFFD62976),
+                Color(0xFF962FBF),
+                Color(0xFF4F5BD5),
+              ],
               begin: Alignment.bottomLeft,
               end: Alignment.topRight,
             )
@@ -573,14 +602,14 @@ class GradText extends StatelessWidget {
 
 // ───────────────────────── avatar & art ─────────────────────────
 const _avatarGrads = [
-  [Color(0xFF7C3AED), Color(0xFFEC4899)],
-  [Color(0xFFFF7A18), Color(0xFFEC4899)],
-  [Color(0xFF06B6D4), Color(0xFF3B82F6)],
-  [Color(0xFF22C55E), Color(0xFF06B6D4)],
-  [Color(0xFFF59E0B), Color(0xFFEF4444)],
-  [Color(0xFF8B5CF6), Color(0xFF06B6D4)],
-  [Color(0xFFEC4899), Color(0xFFF59E0B)],
-  [Color(0xFF3B82F6), Color(0xFF8B5CF6)],
+  [Color(0xFF5A52DE), Color(0xFF8E80F2)],
+  [Color(0xFFC9805A), Color(0xFFC9719E)],
+  [Color(0xFF3F8FB0), Color(0xFF5E7FE0)],
+  [Color(0xFF3FA37E), Color(0xFF3F8FB0)],
+  [Color(0xFFC9A04E), Color(0xFFC96B5A)],
+  [Color(0xFF7D6AD8), Color(0xFF4F9CC0)],
+  [Color(0xFFC9719E), Color(0xFFC9A04E)],
+  [Color(0xFF4F76D8), Color(0xFF7D6AD8)],
 ];
 List<Color> avatarGrad(int seed) =>
     _avatarGrads[seed.abs() % _avatarGrads.length];
@@ -630,7 +659,7 @@ class Avatar extends StatelessWidget {
         emoji.isNotEmpty ? emoji : ini,
         style: TextStyle(
           color: Colors.white,
-          fontWeight: FontWeight.w800,
+          fontWeight: FontWeight.w600,
           fontSize: size * (emoji.isNotEmpty ? .46 : .36),
         ),
       ),
@@ -704,34 +733,34 @@ class _ScenicPainter extends CustomPainter {
   final bool palms;
   static const skies = [
     [
-      Color(0xFF1E1B4B),
-      Color(0xFF7C3AED),
-      Color(0xFFFB7185),
-      Color(0xFFFDBA74),
+      Color(0xFF14142A),
+      Color(0xFF3A3470),
+      Color(0xFF8A6A9E),
+      Color(0xFFE2B58F),
     ],
     [
-      Color(0xFF0F172A),
-      Color(0xFF2563EB),
-      Color(0xFF38BDF8),
-      Color(0xFFFDE68A),
+      Color(0xFF0E1626),
+      Color(0xFF26456E),
+      Color(0xFF5F8DAE),
+      Color(0xFFE4D3A8),
     ],
     [
-      Color(0xFF3B0764),
-      Color(0xFFC026D3),
-      Color(0xFFFB923C),
-      Color(0xFFFDE047),
+      Color(0xFF1C1428),
+      Color(0xFF55386E),
+      Color(0xFFB07A86),
+      Color(0xFFE6C48E),
     ],
     [
-      Color(0xFF042F2E),
-      Color(0xFF0D9488),
-      Color(0xFF5EEAD4),
-      Color(0xFFFEF3C7),
+      Color(0xFF0C1E20),
+      Color(0xFF1F5A58),
+      Color(0xFF6BA39A),
+      Color(0xFFEADFBC),
     ],
     [
-      Color(0xFF450A0A),
-      Color(0xFFDC2626),
-      Color(0xFFFB923C),
-      Color(0xFFFEF08A),
+      Color(0xFF241518),
+      Color(0xFF6E3A3A),
+      Color(0xFFB8795E),
+      Color(0xFFE8CF9A),
     ],
   ];
   @override
@@ -852,8 +881,8 @@ class VLogo extends StatelessWidget {
           borderRadius: BorderRadius.circular(size * .3),
           boxShadow: [
             BoxShadow(
-              color: VC.violet.withValues(alpha: .5),
-              blurRadius: size * .5,
+              color: VC.violet.withValues(alpha: .2),
+              blurRadius: size * .3,
             ),
           ],
         ),
@@ -865,7 +894,7 @@ class VLogo extends StatelessWidget {
           'VibeDrop',
           style: TextStyle(
             fontSize: size * .62,
-            fontWeight: FontWeight.w900,
+            fontWeight: FontWeight.w700,
             letterSpacing: -.5,
           ),
         ),
@@ -887,12 +916,12 @@ class Glow extends StatelessWidget {
         Positioned(
           top: -140,
           right: -90,
-          child: _blob(VC.violet.withValues(alpha: c.dark ? .32 : .16), 320),
+          child: _blob(VC.violet.withValues(alpha: c.dark ? .10 : .06), 340),
         ),
         Positioned(
           top: 160,
           left: -140,
-          child: _blob(VC.pink.withValues(alpha: c.dark ? .16 : .1), 280),
+          child: _blob(VC.pink.withValues(alpha: c.dark ? .035 : .025), 280),
         ),
         Positioned.fill(child: child),
       ],
@@ -1049,7 +1078,7 @@ class Segment extends StatelessWidget {
                   child: Text(
                     items[i],
                     style: TextStyle(
-                      fontWeight: FontWeight.w800,
+                      fontWeight: FontWeight.w600,
                       fontSize: 13.5,
                       color: i == index ? Colors.white : c.sub,
                     ),

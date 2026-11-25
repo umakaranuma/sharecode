@@ -51,7 +51,7 @@ void shareQrSheet(BuildContext context) {
         children: [
           const Text(
             'Share your QR',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900),
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
           ),
           const SizedBox(height: 18),
           const MyQr(size: 190),
@@ -77,7 +77,7 @@ void shareQrSheet(BuildContext context) {
                     'Copy',
                     style: TextStyle(
                       color: c.accent,
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
@@ -184,7 +184,7 @@ class FullQrPage extends StatelessWidget {
               s.me.name,
               style: TextStyle(
                 fontSize: 26,
-                fontWeight: FontWeight.w900,
+                fontWeight: FontWeight.w700,
                 color: pal.neon ? Colors.white : const Color(0xFF14112E),
               ),
             ),

@@ -69,7 +69,7 @@ class SettingsPage extends StatelessWidget {
                           s.me.name,
                           style: const TextStyle(
                             color: Colors.white,
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w700,
                             fontSize: 17,
                           ),
                         ),
@@ -87,7 +87,7 @@ class SettingsPage extends StatelessWidget {
                               : 'Free plan • Tap to upgrade',
                           style: const TextStyle(
                             color: Colors.white,
-                            fontWeight: FontWeight.w800,
+                            fontWeight: FontWeight.w600,
                             fontSize: 12.5,
                           ),
                         ),
@@ -283,7 +283,7 @@ class SettingsPage extends StatelessWidget {
           children: [
             const Text(
               'Language',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900),
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
             ),
             const SizedBox(height: 8),
             RadioGroup<String>(
@@ -347,7 +347,7 @@ class SettingsPage extends StatelessWidget {
           children: [
             const Text(
               'Help & FAQ',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900),
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
             ),
             const SizedBox(height: 8),
             for (final f in faqs)
@@ -357,7 +357,7 @@ class SettingsPage extends StatelessWidget {
                 collapsedShape: const Border(),
                 title: Text(
                   f.$1,
-                  style: const TextStyle(fontWeight: FontWeight.w800),
+                  style: const TextStyle(fontWeight: FontWeight.w600),
                 ),
                 children: [
                   Padding(

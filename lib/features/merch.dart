@@ -20,7 +20,7 @@ class MerchPage extends StatelessWidget {
             onPressed: () => pushPage(context, const OrdersPage()),
             child: Text(
               'Orders${s.orders.isEmpty ? '' : ' (${s.orders.length})'}',
-              style: TextStyle(color: c.accent, fontWeight: FontWeight.w800),
+              style: TextStyle(color: c.accent, fontWeight: FontWeight.w600),
             ),
           ),
         ],
@@ -46,7 +46,7 @@ class MerchPage extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 21,
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
                         SizedBox(height: 6),
@@ -90,7 +90,7 @@ class MerchPage extends StatelessWidget {
                             Text(
                               p.name,
                               style: const TextStyle(
-                                fontWeight: FontWeight.w900,
+                                fontWeight: FontWeight.w700,
                                 fontSize: 16.5,
                               ),
                             ),
@@ -109,7 +109,7 @@ class MerchPage extends StatelessWidget {
                             Text(
                               'LKR ${fmt(p.price)}',
                               style: TextStyle(
-                                fontWeight: FontWeight.w900,
+                                fontWeight: FontWeight.w700,
                                 color: c.accent,
                                 fontSize: 16,
                               ),
@@ -261,7 +261,7 @@ class _ProductPageState extends State<ProductPage> {
                           p.name,
                           style: const TextStyle(
                             fontSize: 24,
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
                       ),
@@ -283,7 +283,7 @@ class _ProductPageState extends State<ProductPage> {
                           backgroundColor: c.card,
                           side: BorderSide(color: c.border),
                           labelStyle: TextStyle(
-                            fontWeight: FontWeight.w800,
+                            fontWeight: FontWeight.w600,
                             color: finish == i ? Colors.white : c.text,
                           ),
                           onSelected: (_) => setState(() => finish = i),
@@ -304,7 +304,7 @@ class _ProductPageState extends State<ProductPage> {
                             '$qty',
                             style: const TextStyle(
                               fontSize: 22,
-                              fontWeight: FontWeight.w900,
+                              fontWeight: FontWeight.w700,
                             ),
                           ),
                         ),
@@ -357,7 +357,7 @@ class _ProductPageState extends State<ProductPage> {
                         'LKR ${fmt(total)}',
                         style: const TextStyle(
                           fontSize: 20,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
                     ],
@@ -450,7 +450,7 @@ class _OrderCheckoutPageState extends State<OrderCheckoutPage> {
                         children: [
                           Text(
                             '${p.name} × ${widget.qty}',
-                            style: const TextStyle(fontWeight: FontWeight.w800),
+                            style: const TextStyle(fontWeight: FontWeight.w600),
                           ),
                           Text(
                             widget.finish,
@@ -461,7 +461,7 @@ class _OrderCheckoutPageState extends State<OrderCheckoutPage> {
                     ),
                     Text(
                       'LKR ${fmt(sub)}',
-                      style: const TextStyle(fontWeight: FontWeight.w900),
+                      style: const TextStyle(fontWeight: FontWeight.w700),
                     ),
                   ],
                 ),
@@ -577,7 +577,7 @@ class _OrderCheckoutPageState extends State<OrderCheckoutPage> {
         Text(
           a,
           style: TextStyle(
-            fontWeight: bold ? FontWeight.w900 : FontWeight.w600,
+            fontWeight: bold ? FontWeight.w700 : FontWeight.w600,
             fontSize: bold ? 17 : 15,
           ),
         ),
@@ -585,7 +585,7 @@ class _OrderCheckoutPageState extends State<OrderCheckoutPage> {
         Text(
           b,
           style: TextStyle(
-            fontWeight: bold ? FontWeight.w900 : FontWeight.w700,
+            fontWeight: bold ? FontWeight.w700 : FontWeight.w700,
             fontSize: bold ? 17 : 15,
           ),
         ),
@@ -618,7 +618,7 @@ class _OrderCheckoutPageState extends State<OrderCheckoutPage> {
           Text(
             t,
             textAlign: TextAlign.center,
-            style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 12.5),
+            style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 12.5),
           ),
         ],
       ),
@@ -666,7 +666,7 @@ class OrderDoneInfo extends StatelessWidget {
                 const SizedBox(height: 26),
                 const Text(
                   'Order placed!',
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
                 ),
                 const SizedBox(height: 8),
                 Text(
@@ -731,7 +731,7 @@ class OrdersPage extends StatelessWidget {
                                   child: Text(
                                     o.product,
                                     style: const TextStyle(
-                                      fontWeight: FontWeight.w900,
+                                      fontWeight: FontWeight.w700,
                                       fontSize: 16,
                                     ),
                                   ),
@@ -739,7 +739,7 @@ class OrdersPage extends StatelessWidget {
                                 Text(
                                   'LKR ${fmt(o.total)}',
                                   style: const TextStyle(
-                                    fontWeight: FontWeight.w800,
+                                    fontWeight: FontWeight.w600,
                                   ),
                                 ),
                               ],

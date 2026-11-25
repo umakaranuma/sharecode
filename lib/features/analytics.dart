@@ -49,7 +49,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                     borderRadius: BorderRadius.circular(99),
                     boxShadow: [
                       BoxShadow(
-                        color: VC.orange.withValues(alpha: .5),
+                        color: VC.orange.withValues(alpha: .2),
                         blurRadius: 20,
                       ),
                     ],
@@ -63,7 +63,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                         'Unlock with Pro',
                         style: TextStyle(
                           color: Colors.white,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
                     ],
@@ -144,7 +144,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                           '$total',
                           style: const TextStyle(
                             fontSize: 30,
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
                         const SizedBox(width: 8),
@@ -229,14 +229,14 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                                       Text(
                                         l.meta.name,
                                         style: const TextStyle(
-                                          fontWeight: FontWeight.w800,
+                                          fontWeight: FontWeight.w600,
                                         ),
                                       ),
                                       const Spacer(),
                                       Text(
                                         '${l.clicks}',
                                         style: const TextStyle(
-                                          fontWeight: FontWeight.w900,
+                                          fontWeight: FontWeight.w700,
                                         ),
                                       ),
                                     ],
@@ -372,7 +372,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                                   Text(
                                     '${(e.value / devTotal * 100).round()}%',
                                     style: const TextStyle(
-                                      fontWeight: FontWeight.w900,
+                                      fontWeight: FontWeight.w700,
                                     ),
                                   ),
                                 ],
@@ -406,7 +406,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
         const SizedBox(height: 12),
         Text(
           v,
-          style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w900),
+          style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w700),
         ),
         Text(l, style: TextStyle(color: context.c.sub, fontSize: 13)),
       ],

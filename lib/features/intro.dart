@@ -103,7 +103,7 @@ class _IntroPageState extends State<IntroPage> {
                       style: const TextStyle(
                         fontSize: 34,
                         height: 1.1,
-                        fontWeight: FontWeight.w900,
+                        fontWeight: FontWeight.w700,
                         letterSpacing: -.8,
                       ),
                     ),
@@ -195,7 +195,7 @@ class _Splash extends StatelessWidget {
                 'VibeDrop',
                 style: TextStyle(
                   fontSize: 38,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                   letterSpacing: -1,
                 ),
               ),
@@ -237,8 +237,8 @@ class _QrArt extends StatelessWidget {
             borderRadius: BorderRadius.circular(34),
             boxShadow: [
               BoxShadow(
-                color: VC.violet.withValues(alpha: .5),
-                blurRadius: 50,
+                color: VC.violet.withValues(alpha: .2),
+                blurRadius: 30,
                 offset: const Offset(0, 20),
               ),
             ],
@@ -272,7 +272,9 @@ class _QrArt extends StatelessWidget {
                       ),
                     ],
                   ),
-                  child: Center(child: anyIcon(i.$1, color: Colors.white, size: 22)),
+                  child: Center(
+                    child: anyIcon(i.$1, color: Colors.white, size: 22),
+                  ),
                 ),
               ),
             ),
@@ -305,7 +307,7 @@ class _PrivacyArt extends StatelessWidget {
           Expanded(
             child: Text(
               t,
-              style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16),
+              style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
             ),
           ),
           Icon(

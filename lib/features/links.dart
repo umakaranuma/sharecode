@@ -40,7 +40,7 @@ Future<(int, String)?> pickAvatar(
             children: [
               const Text(
                 'Profile picture',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900),
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
               ),
               const SizedBox(height: 18),
               Center(
@@ -183,7 +183,7 @@ Future<void> editLinkSheet(
                 link == null ? 'Add a link' : 'Edit link',
                 style: const TextStyle(
                   fontSize: 22,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
               const SizedBox(height: 6),
@@ -285,7 +285,7 @@ Future<void> editLinkSheet(
                         selectedColor: VC.violet,
                         backgroundColor: c.card2,
                         labelStyle: TextStyle(
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.w600,
                           color: modes.contains(m) ? Colors.white : c.text,
                         ),
                         side: BorderSide.none,

@@ -196,7 +196,7 @@ class _ScannerPageState extends State<ScannerPage>
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 18,
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                       const Spacer(),
@@ -327,7 +327,7 @@ class _ScannerPageState extends State<ScannerPage>
           children: [
             Text(
               'How scanning works',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900),
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
             ),
             SizedBox(height: 14),
             RowTile(
@@ -365,7 +365,7 @@ class _ScannerPageState extends State<ScannerPage>
           children: [
             const Text(
               'Scan from image',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900),
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
             ),
             const SizedBox(height: 4),
             Text(
@@ -430,7 +430,7 @@ class _ScannerPageState extends State<ScannerPage>
               children: [
                 const Text(
                   'Enter a handle',
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900),
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
                 ),
                 Text(
                   'Try: nisha_r, thivyan, dilan_p, anjali.f, mathu, ghost_one',

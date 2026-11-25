@@ -267,7 +267,7 @@ class _PublicProfilePageState extends State<PublicProfilePage> {
                               'Get VibeDrop to Wave & chat',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontWeight: FontWeight.w800,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
                           ),
@@ -290,7 +290,7 @@ class _PublicProfilePageState extends State<PublicProfilePage> {
                                 'Install',
                                 style: TextStyle(
                                   color: VC.violet,
-                                  fontWeight: FontWeight.w900,
+                                  fontWeight: FontWeight.w700,
                                 ),
                               ),
                             ),
@@ -459,7 +459,7 @@ class _PublicProfilePageState extends State<PublicProfilePage> {
         const Text(
           'This profile is currently private',
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
         ),
         const SizedBox(height: 10),
         Text(
@@ -495,7 +495,7 @@ class _PublicProfilePageState extends State<PublicProfilePage> {
                 d.name,
                 style: const TextStyle(
                   fontSize: 26,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                   letterSpacing: -.5,
                 ),
               ),
@@ -637,7 +637,7 @@ class _PublicProfilePageState extends State<PublicProfilePage> {
                               Text(
                                 platformOf(d.links[i][0]).name,
                                 style: const TextStyle(
-                                  fontWeight: FontWeight.w800,
+                                  fontWeight: FontWeight.w600,
                                   fontSize: 16,
                                 ),
                               ),
@@ -770,7 +770,7 @@ class _PublicProfilePageState extends State<PublicProfilePage> {
             children: [
               const Text(
                 'Report this profile',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900),
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
               ),
               const SizedBox(height: 14),
               RadioGroup<String>(
@@ -837,7 +837,7 @@ class _PublicProfilePageState extends State<PublicProfilePage> {
           children: [
             const Text(
               'Save to Contacts',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900),
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
             ),
             const SizedBox(height: 16),
             Box(
@@ -848,7 +848,7 @@ class _PublicProfilePageState extends State<PublicProfilePage> {
                   Text(
                     d.name,
                     style: const TextStyle(
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w700,
                       fontSize: 18,
                     ),
                   ),
@@ -931,7 +931,7 @@ class _PublicProfilePageState extends State<PublicProfilePage> {
                         'Wave at ${d.name.split(' ').first}',
                         style: const TextStyle(
                           fontSize: 22,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
                     ),
@@ -1033,7 +1033,7 @@ class Segment2 extends StatelessWidget {
               t,
               style: TextStyle(
                 fontSize: 12,
-                fontWeight: FontWeight.w800,
+                fontWeight: FontWeight.w600,
                 color: on ? Colors.white : c.sub,
               ),
             ),
@@ -1085,7 +1085,7 @@ class _OpenLinkSheet extends StatelessWidget {
           const SizedBox(height: 16),
           Text(
             'Open ${p.name}',
-            style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w900),
+            style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
           ),
           const SizedBox(height: 6),
           Text(
@@ -1203,7 +1203,7 @@ class _LockCardState extends State<_LockCard>
             const SizedBox(height: 14),
             Text(
               isPin ? 'Links are PIN locked' : 'Answer to unlock',
-              style: const TextStyle(fontSize: 19, fontWeight: FontWeight.w900),
+              style: const TextStyle(fontSize: 19, fontWeight: FontWeight.w700),
             ),
             const SizedBox(height: 6),
             Text(

@@ -65,7 +65,7 @@ class _ChatPageState extends State<ChatPage> {
                   widget.name,
                   style: const TextStyle(
                     fontSize: 16,
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
                 const Text(

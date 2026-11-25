@@ -19,7 +19,7 @@ class NotificationsPage extends StatelessWidget {
               'Mark all read',
               style: TextStyle(
                 color: s.unreadCount == 0 ? c.sub : c.accent,
-                fontWeight: FontWeight.w800,
+                fontWeight: FontWeight.w600,
               ),
             ),
           ),
@@ -79,7 +79,7 @@ class NotificationsPage extends StatelessWidget {
                                 Text(
                                   n.title,
                                   style: const TextStyle(
-                                    fontWeight: FontWeight.w800,
+                                    fontWeight: FontWeight.w600,
                                     fontSize: 14.5,
                                   ),
                                 ),

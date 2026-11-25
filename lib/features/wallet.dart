@@ -54,7 +54,7 @@ class _WalletPageState extends State<WalletPage> {
                     const Text(
                       'Nothing here yet',
                       style: TextStyle(
-                        fontWeight: FontWeight.w800,
+                        fontWeight: FontWeight.w600,
                         fontSize: 18,
                       ),
                     ),
@@ -111,7 +111,7 @@ class _WalletPageState extends State<WalletPage> {
                               Text(
                                 x.name,
                                 style: const TextStyle(
-                                  fontWeight: FontWeight.w800,
+                                  fontWeight: FontWeight.w600,
                                   fontSize: 16,
                                 ),
                               ),

@@ -104,7 +104,7 @@ class MePage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(99),
                       boxShadow: [
                         BoxShadow(
-                          color: VC.violet.withValues(alpha: .4),
+                          color: VC.violet.withValues(alpha: .2),
                           blurRadius: 16,
                           offset: const Offset(0, 6),
                         ),
@@ -119,7 +119,7 @@ class MePage extends StatelessWidget {
                           'Edit profile',
                           style: TextStyle(
                             color: Colors.white,
-                            fontWeight: FontWeight.w800,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                       ],
@@ -142,7 +142,7 @@ class MePage extends StatelessWidget {
                       me.name,
                       style: const TextStyle(
                         fontSize: 26,
-                        fontWeight: FontWeight.w900,
+                        fontWeight: FontWeight.w700,
                         letterSpacing: -.5,
                       ),
                     ),
@@ -223,7 +223,7 @@ class MePage extends StatelessWidget {
                               Text(
                                 l.meta.name,
                                 style: const TextStyle(
-                                  fontWeight: FontWeight.w800,
+                                  fontWeight: FontWeight.w600,
                                   fontSize: 16,
                                 ),
                               ),
@@ -240,7 +240,7 @@ class MePage extends StatelessWidget {
                             Text(
                               '${l.clicks}',
                               style: const TextStyle(
-                                fontWeight: FontWeight.w900,
+                                fontWeight: FontWeight.w700,
                               ),
                             ),
                             Text(
@@ -374,7 +374,7 @@ class MePage extends StatelessWidget {
       children: [
         Text(
           n,
-          style: const TextStyle(fontSize: 21, fontWeight: FontWeight.w900),
+          style: const TextStyle(fontSize: 21, fontWeight: FontWeight.w700),
         ),
         Text(l, style: TextStyle(color: context.c.sub, fontSize: 12.5)),
       ],
@@ -394,7 +394,7 @@ void pickCover(BuildContext context) {
         children: [
           const Text(
             'Cover banner',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900),
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
           ),
           const SizedBox(height: 14),
           GridView.count(

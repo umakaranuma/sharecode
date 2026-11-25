@@ -75,7 +75,7 @@ class Shell extends StatelessWidget {
                           style: const TextStyle(
                             color: Colors.white,
                             fontSize: 10,
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
                       ),
@@ -87,7 +87,7 @@ class Shell extends StatelessWidget {
                 label,
                 style: TextStyle(
                   fontSize: 11,
-                  fontWeight: on ? FontWeight.w800 : FontWeight.w600,
+                  fontWeight: on ? FontWeight.w600 : FontWeight.w600,
                   color: on ? c.accent : c.sub,
                 ),
               ),
@@ -104,12 +104,12 @@ class Shell extends StatelessWidget {
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: c.dark ? const Color(0xF2100E22) : const Color(0xF5FFFFFF),
+          color: c.dark ? const Color(0xF20F0F13) : const Color(0xF5FFFFFF),
           border: Border(top: BorderSide(color: c.border)),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: c.dark ? .4 : .06),
-              blurRadius: 24,
+              color: Colors.black.withValues(alpha: c.dark ? .3 : .04),
+              blurRadius: 18,
               offset: const Offset(0, -6),
             ),
           ],
@@ -129,18 +129,18 @@ class Shell extends StatelessWidget {
                       onTap: () => pushPage(context, const ScannerPage()),
                       scale: .9,
                       child: Container(
-                        height: 62,
-                        width: 62,
+                        height: 58,
+                        width: 58,
                         margin: const EdgeInsets.symmetric(horizontal: 6),
                         decoration: BoxDecoration(
                           gradient: VC.brand,
-                          borderRadius: BorderRadius.circular(22),
+                          borderRadius: BorderRadius.circular(20),
                           border: Border.all(color: c.bg, width: 4),
                           boxShadow: [
                             BoxShadow(
-                              color: VC.violet.withValues(alpha: .6),
-                              blurRadius: 22,
-                              offset: const Offset(0, 8),
+                              color: VC.violet.withValues(alpha: .3),
+                              blurRadius: 14,
+                              offset: const Offset(0, 5),
                             ),
                           ],
                         ),

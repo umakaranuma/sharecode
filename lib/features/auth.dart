@@ -69,7 +69,7 @@ class AuthPage extends StatelessWidget {
             Text(
               label,
               style: TextStyle(
-                fontWeight: FontWeight.w800,
+                fontWeight: FontWeight.w600,
                 fontSize: 15.5,
                 color: filled ? (c.dark ? Colors.black : Colors.white) : c.text,
               ),
@@ -95,7 +95,7 @@ class AuthPage extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 38,
                         height: 1.08,
-                        fontWeight: FontWeight.w900,
+                        fontWeight: FontWeight.w700,
                         letterSpacing: -1,
                         color: c.text,
                       ),
@@ -127,7 +127,7 @@ class AuthPage extends StatelessWidget {
                         const Text(
                           'G',
                           style: TextStyle(
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w700,
                             fontSize: 22,
                             color: Color(0xFF4285F4),
                           ),
@@ -270,7 +270,7 @@ class _EmailAuthPageState extends State<EmailAuthPage> {
                     signup ? 'Let\'s get you set up' : 'Log in to VibeDrop',
                     style: const TextStyle(
                       fontSize: 28,
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w700,
                       letterSpacing: -.5,
                     ),
                   ),
@@ -383,7 +383,7 @@ class _EmailAuthPageState extends State<EmailAuthPage> {
                               text: signup ? 'Log in' : 'Create account',
                               style: TextStyle(
                                 color: c.accent,
-                                fontWeight: FontWeight.w800,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
                           ],
@@ -427,7 +427,7 @@ class _EmailAuthPageState extends State<EmailAuthPage> {
                 const SizedBox(height: 28),
                 const Text(
                   'Check your inbox',
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w900),
+                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w700),
                 ),
                 const SizedBox(height: 10),
                 Text(
@@ -498,7 +498,7 @@ class _ForgotPageState extends State<ForgotPage> {
                         'Reset link sent',
                         style: TextStyle(
                           fontSize: 26,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
                       const SizedBox(height: 8),
@@ -521,7 +521,7 @@ class _ForgotPageState extends State<ForgotPage> {
                         'Forgot your password?',
                         style: TextStyle(
                           fontSize: 28,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
                       const SizedBox(height: 8),
@@ -593,7 +593,7 @@ class _PhoneAuthPageState extends State<PhoneAuthPage> {
               children: [
                 const Text(
                   'What\'s your number?',
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w900),
+                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w700),
                 ),
                 const SizedBox(height: 8),
                 Text(
@@ -617,7 +617,7 @@ class _PhoneAuthPageState extends State<PhoneAuthPage> {
                           SizedBox(width: 8),
                           Text(
                             '+94',
-                            style: TextStyle(fontWeight: FontWeight.w800),
+                            style: TextStyle(fontWeight: FontWeight.w600),
                           ),
                         ],
                       ),
@@ -752,7 +752,7 @@ class _OtpPageState extends State<OtpPage> {
                 Text(
                   widget.number,
                   style: const TextStyle(
-                    fontWeight: FontWeight.w900,
+                    fontWeight: FontWeight.w700,
                     fontSize: 20,
                   ),
                 ),
@@ -781,7 +781,7 @@ class _OtpPageState extends State<OtpPage> {
                           i < code.length ? code[i] : '',
                           style: const TextStyle(
                             fontSize: 24,
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
                       ),
@@ -817,7 +817,7 @@ class _OtpPageState extends State<OtpPage> {
                           'Resend code',
                           style: TextStyle(
                             color: c.accent,
-                            fontWeight: FontWeight.w800,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                       ),

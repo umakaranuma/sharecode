@@ -82,7 +82,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 'Save',
                 style: TextStyle(
                   color: dirty ? c.accent : c.sub,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                   fontSize: 16,
                 ),
               ),
@@ -222,7 +222,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                         backgroundColor: c.card,
                         side: BorderSide(color: c.border),
                         labelStyle: TextStyle(
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.w600,
                           color: city == x ? Colors.white : c.text,
                         ),
                         onSelected: (_) {
@@ -306,7 +306,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                             color: c.card,
                             borderRadius: BorderRadius.circular(18),
                             border: Border.all(
-                              color: VC.violet.withValues(alpha: .5),
+                              color: VC.violet.withValues(alpha: .2),
                               width: 1.5,
                             ),
                           ),
@@ -322,7 +322,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                 'Add',
                                 style: TextStyle(
                                   color: c.accent,
-                                  fontWeight: FontWeight.w800,
+                                  fontWeight: FontWeight.w600,
                                   fontSize: 12,
                                 ),
                               ),
@@ -384,7 +384,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                     Text(
                                       me.links[i].meta.name,
                                       style: const TextStyle(
-                                        fontWeight: FontWeight.w800,
+                                        fontWeight: FontWeight.w600,
                                       ),
                                     ),
                                     Text(
@@ -479,7 +479,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                       const Expanded(
                         child: Text(
                           'Allow 1-tap save to contacts',
-                          style: TextStyle(fontWeight: FontWeight.w800),
+                          style: TextStyle(fontWeight: FontWeight.w600),
                         ),
                       ),
                       Switch(

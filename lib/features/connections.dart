@@ -38,7 +38,7 @@ class _ConnectionsPageState extends State<ConnectionsPage> {
                   'Connections',
                   style: TextStyle(
                     fontSize: 30,
-                    fontWeight: FontWeight.w900,
+                    fontWeight: FontWeight.w700,
                     letterSpacing: -.6,
                   ),
                 ),
@@ -145,7 +145,7 @@ class _ConnectionsPageState extends State<ConnectionsPage> {
                         const Text(
                           'Who viewed your profile?',
                           style: TextStyle(
-                            fontWeight: FontWeight.w800,
+                            fontWeight: FontWeight.w600,
                             fontSize: 15,
                           ),
                         ),
@@ -234,7 +234,7 @@ class _ConnectionsPageState extends State<ConnectionsPage> {
                       'My Wallet',
                       style: TextStyle(
                         color: Colors.white,
-                        fontWeight: FontWeight.w900,
+                        fontWeight: FontWeight.w700,
                         fontSize: 17,
                       ),
                     ),
@@ -307,7 +307,7 @@ class _ScanTile extends StatelessWidget {
                 Text(
                   e.who,
                   style: const TextStyle(
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w600,
                     fontSize: 15,
                   ),
                 ),
@@ -454,7 +454,7 @@ class _WaveTile extends StatelessWidget {
                 Text(
                   w.name,
                   style: const TextStyle(
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w600,
                     fontSize: 15,
                   ),
                 ),

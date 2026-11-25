@@ -159,7 +159,7 @@ class _ExportPageState extends State<ExportPage> {
                           titles[page],
                           style: const TextStyle(
                             fontSize: 19,
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
                         const SizedBox(height: 4),
@@ -330,7 +330,7 @@ class _ExportPageState extends State<ExportPage> {
                               'Print My QR',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontWeight: FontWeight.w900,
+                                fontWeight: FontWeight.w700,
                                 fontSize: 17,
                               ),
                             ),
@@ -392,7 +392,7 @@ class _ExportPageState extends State<ExportPage> {
           children: [
             const Text(
               'Transparent PNG',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900),
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
             ),
             const SizedBox(height: 16),
             ClipRRect(
@@ -436,7 +436,7 @@ class _ExportPageState extends State<ExportPage> {
           children: [
             const Text(
               'Wallet pass',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900),
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
             ),
             const SizedBox(height: 16),
             Container(
@@ -446,7 +446,7 @@ class _ExportPageState extends State<ExportPage> {
                 borderRadius: BorderRadius.circular(26),
                 boxShadow: [
                   BoxShadow(
-                    color: VC.violet.withValues(alpha: .4),
+                    color: VC.violet.withValues(alpha: .2),
                     blurRadius: 30,
                     offset: const Offset(0, 12),
                   ),
@@ -486,7 +486,7 @@ class _ExportPageState extends State<ExportPage> {
                       s.me.name,
                       style: const TextStyle(
                         color: Colors.white,
-                        fontWeight: FontWeight.w900,
+                        fontWeight: FontWeight.w700,
                         fontSize: 18,
                       ),
                     ),
@@ -543,7 +543,7 @@ class _ExportPageState extends State<ExportPage> {
             t,
             style: const TextStyle(
               color: Colors.white,
-              fontWeight: FontWeight.w800,
+              fontWeight: FontWeight.w600,
               fontSize: 14,
             ),
           ),
@@ -633,7 +633,7 @@ class WallpaperPreview extends StatelessWidget {
                         '9:41',
                         style: TextStyle(
                           color: Colors.white,
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.w600,
                           fontSize: w * .3,
                           height: 1,
                         ),
@@ -682,7 +682,7 @@ class StoryPreview extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(28),
             gradient: const LinearGradient(
-              colors: [Color(0xFF3B0764), Color(0xFF7C3AED), Color(0xFFEC4899)],
+              colors: [Color(0xFF3B0764), Color(0xFF6F66E8), Color(0xFFEC4899)],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
@@ -709,7 +709,7 @@ class StoryPreview extends StatelessWidget {
                 s.me.name,
                 style: TextStyle(
                   color: Colors.white,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                   fontSize: w * .075,
                 ),
               ),
@@ -728,7 +728,7 @@ class StoryPreview extends StatelessWidget {
                 'SCAN TO CONNECT',
                 style: TextStyle(
                   color: Colors.white,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                   letterSpacing: 2,
                   fontSize: w * .042,
                 ),

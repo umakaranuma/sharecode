@@ -15,51 +15,51 @@ class VC extends ThemeExtension<VC> {
   final Color bg, card, card2, border, text, sub;
   final bool dark;
 
-  static const violet = Color(0xFF7C3AED);
-  static const fuchsia = Color(0xFFC026D3);
-  static const pink = Color(0xFFEC4899);
-  static const orange = Color(0xFFFF7A18);
-  static const green = Color(0xFF22C55E);
-  static const red = Color(0xFFEF4444);
-  static const blue = Color(0xFF3B82F6);
-  static const gold = Color(0xFFFBBF24);
+  static const violet = Color(0xFF6F66E8);
+  static const fuchsia = Color(0xFF8E80F2);
+  static const pink = Color(0xFFD9779F);
+  static const orange = Color(0xFFE39A5C);
+  static const green = Color(0xFF49B98A);
+  static const red = Color(0xFFE0626B);
+  static const blue = Color(0xFF5E9BEA);
+  static const gold = Color(0xFFD6AE5E);
 
   static const brand = LinearGradient(
-    colors: [Color(0xFF6D28D9), Color(0xFF9333EA), Color(0xFFC026D3)],
+    colors: [Color(0xFF5A52DE), Color(0xFF7D72F0)],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
   static const sunset = LinearGradient(
-    colors: [Color(0xFFFF7A18), Color(0xFFEC4899), Color(0xFF7C3AED)],
+    colors: [Color(0xFFD9906A), Color(0xFFC9719E), Color(0xFF7D72F0)],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
   static const proGrad = LinearGradient(
-    colors: [Color(0xFFFBBF24), Color(0xFFFF7A18)],
+    colors: [Color(0xFFDDB964), Color(0xFFC98B55)],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
 
   static const darkC = VC(
-    bg: Color(0xFF0A0914),
-    card: Color(0xFF15132A),
-    card2: Color(0xFF1D1A38),
-    border: Color(0x1FFFFFFF),
-    text: Color(0xFFF5F3FF),
-    sub: Color(0xFF9E9ABD),
+    bg: Color(0xFF0B0B0E),
+    card: Color(0xFF131318),
+    card2: Color(0xFF1B1B22),
+    border: Color(0x14FFFFFF),
+    text: Color(0xFFF2F2F5),
+    sub: Color(0xFF8E8E9A),
     dark: true,
   );
   static const lightC = VC(
-    bg: Color(0xFFF6F3FF),
+    bg: Color(0xFFF6F6F8),
     card: Color(0xFFFFFFFF),
-    card2: Color(0xFFF1ECFF),
-    border: Color(0xFFE6DEF8),
-    text: Color(0xFF14112E),
-    sub: Color(0xFF6B6788),
+    card2: Color(0xFFEFEFF3),
+    border: Color(0xFFE6E6EC),
+    text: Color(0xFF16161C),
+    sub: Color(0xFF6E6E7A),
     dark: false,
   );
 
-  Color get accent => dark ? const Color(0xFFA78BFA) : violet;
+  Color get accent => dark ? const Color(0xFF9C95F5) : violet;
 
   @override
   VC copyWith() => this;
@@ -106,7 +106,7 @@ ThemeData buildTheme(bool dark) {
       trackColor: WidgetStateProperty.resolveWith(
         (s) => s.contains(WidgetState.selected)
             ? VC.violet
-            : (dark ? const Color(0xFF3A3658) : const Color(0xFFCFC8E6)),
+            : (dark ? const Color(0xFF34343F) : const Color(0xFFCDCDD6)),
       ),
       trackOutlineColor: const WidgetStatePropertyAll(Colors.transparent),
     ),

@@ -43,7 +43,7 @@ class _StudioPageState extends State<StudioPage> {
                   'QR Studio',
                   style: TextStyle(
                     fontSize: 30,
-                    fontWeight: FontWeight.w900,
+                    fontWeight: FontWeight.w700,
                     letterSpacing: -.6,
                   ),
                 ),
@@ -142,7 +142,7 @@ class _StudioPageState extends State<StudioPage> {
               Text(
                 t,
                 style: const TextStyle(
-                  fontWeight: FontWeight.w800,
+                  fontWeight: FontWeight.w600,
                   fontSize: 15,
                 ),
               ),
@@ -161,7 +161,7 @@ class _StudioPageState extends State<StudioPage> {
     return [
       const Text(
         'Colors',
-        style: TextStyle(fontSize: 17, fontWeight: FontWeight.w800),
+        style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
       ),
       const SizedBox(height: 12),
       _paletteRow(context, s),
@@ -187,7 +187,7 @@ class _StudioPageState extends State<StudioPage> {
         const SizedBox(height: 6),
         const Text(
           'Center logo',
-          style: TextStyle(fontSize: 17, fontWeight: FontWeight.w800),
+          style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
         ),
         const SizedBox(height: 12),
         Row(
@@ -258,7 +258,7 @@ class _StudioPageState extends State<StudioPage> {
             Text(
               t,
               style: TextStyle(
-                fontWeight: FontWeight.w800,
+                fontWeight: FontWeight.w600,
                 fontSize: 12.5,
                 color: on ? c.accent : c.text,
               ),
@@ -375,7 +375,7 @@ class _StudioPageState extends State<StudioPage> {
     return [
       const Text(
         'Dot style',
-        style: TextStyle(fontSize: 17, fontWeight: FontWeight.w800),
+        style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
       ),
       const SizedBox(height: 12),
       SizedBox(
@@ -438,7 +438,7 @@ class _StudioPageState extends State<StudioPage> {
                           e.value,
                           style: TextStyle(
                             fontSize: 11.5,
-                            fontWeight: FontWeight.w800,
+                            fontWeight: FontWeight.w600,
                             color: q.dots == e.key ? c.accent : c.text,
                           ),
                         ),
@@ -453,7 +453,7 @@ class _StudioPageState extends State<StudioPage> {
       const SizedBox(height: 20),
       const Text(
         'Eye style',
-        style: TextStyle(fontSize: 17, fontWeight: FontWeight.w800),
+        style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
       ),
       const SizedBox(height: 12),
       Row(
@@ -492,7 +492,7 @@ class _StudioPageState extends State<StudioPage> {
                           e.value,
                           style: TextStyle(
                             fontSize: 12,
-                            fontWeight: FontWeight.w800,
+                            fontWeight: FontWeight.w600,
                             color: q.eyes == e.key ? c.accent : c.text,
                           ),
                         ),
@@ -507,7 +507,7 @@ class _StudioPageState extends State<StudioPage> {
       const SizedBox(height: 20),
       const Text(
         'Colors',
-        style: TextStyle(fontSize: 17, fontWeight: FontWeight.w800),
+        style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
       ),
       const SizedBox(height: 12),
       _paletteRow(context, s),
@@ -530,7 +530,7 @@ class _StudioPageState extends State<StudioPage> {
       const SizedBox(height: 6),
       const Text(
         'Frame style',
-        style: TextStyle(fontSize: 17, fontWeight: FontWeight.w800),
+        style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
       ),
       const SizedBox(height: 12),
       SizedBox(
@@ -549,7 +549,7 @@ class _StudioPageState extends State<StudioPage> {
                   backgroundColor: c.card,
                   side: BorderSide(color: c.border),
                   labelStyle: TextStyle(
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w600,
                     color: q.frameStyle == i ? Colors.white : c.text,
                   ),
                   onSelected: (_) {
@@ -565,7 +565,7 @@ class _StudioPageState extends State<StudioPage> {
       const SizedBox(height: 18),
       const Text(
         'Call-to-action text',
-        style: TextStyle(fontSize: 17, fontWeight: FontWeight.w800),
+        style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
       ),
       const SizedBox(height: 4),
       Text(
@@ -586,7 +586,7 @@ class _StudioPageState extends State<StudioPage> {
               backgroundColor: c.card,
               side: BorderSide(color: c.border),
               labelStyle: TextStyle(
-                fontWeight: FontWeight.w800,
+                fontWeight: FontWeight.w600,
                 fontSize: 13,
                 color: q.frameText == t ? Colors.white : c.text,
               ),

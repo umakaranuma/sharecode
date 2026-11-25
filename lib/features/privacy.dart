@@ -41,13 +41,12 @@ class PrivacyPage extends StatelessWidget {
                         Text(
                           modeName(m),
                           style: const TextStyle(
-                            fontWeight: FontWeight.w800,
+                            fontWeight: FontWeight.w600,
                             fontSize: 16,
                           ),
                         ),
                         if (on)
                           const Pill('Active', color: VC.green, filled: true),
-                        
                       ],
                     ),
                     const SizedBox(height: 4),
@@ -163,7 +162,6 @@ class PrivacyPage extends StatelessWidget {
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        
                         const SizedBox(width: 6),
                         Switch(
                           value: s.lockOn,
@@ -205,7 +203,7 @@ class PrivacyPage extends StatelessWidget {
                                     ? 'Tap to set a PIN'
                                     : '● ● ● ●',
                                 style: TextStyle(
-                                  fontWeight: FontWeight.w800,
+                                  fontWeight: FontWeight.w600,
                                   letterSpacing: 4,
                                   color: s.lockPin.isEmpty ? c.sub : c.text,
                                 ),
@@ -263,7 +261,6 @@ class PrivacyPage extends StatelessWidget {
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        
                         const SizedBox(width: 6),
                         Switch(
                           value: s.tempLinkUntil != null,
@@ -382,7 +379,7 @@ class PrivacyPage extends StatelessWidget {
             children: [
               const Text(
                 'Blocked users',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900),
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
               ),
               const SizedBox(height: 12),
               if (s.blocked.isEmpty)
@@ -448,7 +445,7 @@ class PrivacyPage extends StatelessWidget {
               children: [
                 const Text(
                   'Set a 4-digit PIN',
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900),
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
                 ),
                 const SizedBox(height: 4),
                 Text(
@@ -532,7 +529,7 @@ class PrivacyPage extends StatelessWidget {
             children: [
               const Text(
                 'Custom visibility',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900),
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
               ),
               Text(
                 'Pick the links scanners can see in Custom mode.',

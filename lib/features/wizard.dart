@@ -196,7 +196,7 @@ class _WizardPageState extends State<WizardPage> {
                       '${step + 1}/3',
                       style: TextStyle(
                         color: c.sub,
-                        fontWeight: FontWeight.w800,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ],
@@ -212,7 +212,7 @@ class _WizardPageState extends State<WizardPage> {
                         titles[step],
                         style: const TextStyle(
                           fontSize: 30,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                           letterSpacing: -.6,
                         ),
                       ),
@@ -259,7 +259,7 @@ class _WizardPageState extends State<WizardPage> {
           onChanged: onUser,
           autocorrect: false,
           inputFormatters: [LengthLimitingTextInputFormatter(24)],
-          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
           decoration: InputDecoration(
             hintText: 'username',
             prefixIcon: Padding(
@@ -270,7 +270,7 @@ class _WizardPageState extends State<WizardPage> {
                   '@',
                   style: TextStyle(
                     fontSize: 22,
-                    fontWeight: FontWeight.w900,
+                    fontWeight: FontWeight.w700,
                     color: c.accent,
                   ),
                 ),
@@ -313,7 +313,7 @@ class _WizardPageState extends State<WizardPage> {
               Expanded(
                 child: Text(
                   'vibedrop.lk/u/${user.text.isEmpty ? 'yourname' : user.text.toLowerCase()}',
-                  style: const TextStyle(fontWeight: FontWeight.w800),
+                  style: const TextStyle(fontWeight: FontWeight.w600),
                 ),
               ),
             ],
@@ -442,7 +442,7 @@ class _WizardPageState extends State<WizardPage> {
                 showCheckmark: false,
                 selectedColor: VC.violet,
                 labelStyle: TextStyle(
-                  fontWeight: FontWeight.w800,
+                  fontWeight: FontWeight.w600,
                   color: city == x ? Colors.white : c.text,
                 ),
                 backgroundColor: c.card,

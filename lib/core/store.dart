@@ -418,7 +418,10 @@ class AppStore extends ChangeNotifier {
     onboarded = true; // straight to Home; profile is set up there
     authEmail = email;
     if (!qrReady) {
-      final base = email.split('@').first.replaceAll(RegExp(r'[^A-Za-z0-9_ ]'), '');
+      final base = email
+          .split('@')
+          .first
+          .replaceAll(RegExp(r'[^A-Za-z0-9_ ]'), '');
       me
         ..username = ''
         ..name = base.isEmpty ? 'New user' : base

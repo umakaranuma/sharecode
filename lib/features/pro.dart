@@ -96,7 +96,7 @@ class _ProPageState extends State<ProPage> {
                           borderRadius: BorderRadius.circular(26),
                           boxShadow: [
                             BoxShadow(
-                              color: VC.orange.withValues(alpha: .6),
+                              color: VC.orange.withValues(alpha: .2),
                               blurRadius: 30,
                             ),
                           ],
@@ -113,7 +113,7 @@ class _ProPageState extends State<ProPage> {
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 32,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                           letterSpacing: -.8,
                         ),
                       ),
@@ -155,7 +155,7 @@ class _ProPageState extends State<ProPage> {
                                     Text(
                                       f.$2,
                                       style: const TextStyle(
-                                        fontWeight: FontWeight.w800,
+                                        fontWeight: FontWeight.w600,
                                         fontSize: 15.5,
                                       ),
                                     ),
@@ -341,7 +341,7 @@ class _ProPageState extends State<ProPage> {
                       TextSpan(
                         text: p,
                         style: const TextStyle(
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                           fontSize: 18,
                         ),
                       ),
@@ -385,8 +385,8 @@ class _ProPageState extends State<ProPage> {
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                      color: VC.orange.withValues(alpha: .5),
-                      blurRadius: 40,
+                      color: VC.orange.withValues(alpha: .2),
+                      blurRadius: 24,
                     ),
                   ],
                 ),
@@ -399,7 +399,7 @@ class _ProPageState extends State<ProPage> {
               const SizedBox(height: 24),
               const Text(
                 'You\'re Pro! 🎉',
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
               ),
               const SizedBox(height: 8),
               Text(
@@ -524,7 +524,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                         Text(
                           'VibeDrop Pro • ${widget.plan == 0 ? 'Monthly' : 'Yearly'}',
                           style: const TextStyle(
-                            fontWeight: FontWeight.w800,
+                            fontWeight: FontWeight.w600,
                             fontSize: 16,
                           ),
                         ),
@@ -538,7 +538,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                   Text(
                     'LKR $base',
                     style: const TextStyle(
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w700,
                       fontSize: 16,
                     ),
                   ),
@@ -569,7 +569,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                             Text(
                               methods[i].$2,
                               style: const TextStyle(
-                                fontWeight: FontWeight.w800,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
                             Text(
@@ -685,7 +685,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
         Text(
           a,
           style: TextStyle(
-            fontWeight: bold ? FontWeight.w900 : FontWeight.w600,
+            fontWeight: bold ? FontWeight.w700 : FontWeight.w600,
             fontSize: bold ? 17 : 15,
           ),
         ),
@@ -693,7 +693,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
         Text(
           b,
           style: TextStyle(
-            fontWeight: bold ? FontWeight.w900 : FontWeight.w700,
+            fontWeight: bold ? FontWeight.w700 : FontWeight.w700,
             fontSize: bold ? 17 : 15,
             color: col,
           ),
